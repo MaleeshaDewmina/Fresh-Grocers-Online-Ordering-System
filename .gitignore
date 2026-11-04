@@ -1,0 +1,19 @@
+# Sensitive local data and credentials
+.env
+.env.*
+!.env.example
+*.bak
+*.log
+*.sql.gz
+*.mdf
+*.ldf
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+# Dependencies / generated assets
+vendor/
+node_modules/
+web-app/uploads/*
+!web-app/uploads/.gitkeep
