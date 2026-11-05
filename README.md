@@ -2,7 +2,7 @@
 
 > **Academic system analysis, design and web implementation** · Pearson BTEC HND in Computing · Unit 35: System Analysis & Design · 2025
 
-![Fresh Grocers homepage](docs/screenshots/homepage.png)
+Fresh Grocers homepage (upload pending)
 
 Fresh Grocers is a coursework project for a Sri Lankan grocery delivery business scenario. It combines systems analysis and software design artifacts with an archived PHP-based grocery shopping prototype. The intended user journeys include browsing groceries, managing a shopping cart, submitting orders, and managing products through an administrative interface.
 
@@ -32,11 +32,11 @@ Fresh Grocers is a coursework project for a Sri Lankan grocery delivery business
 
 | Home page | Product listing |
 |---|---|
-| ![Homepage screenshot](docs/screenshots/homepage.png) | ![Product listing screenshot](docs/screenshots/product-listing.png) |
+| Homepage screenshot (upload pending) | Product listing screenshot (upload pending) |
 | Product details | Admin dashboard |
 | ![Product detail screenshot](docs/screenshots/product-detail.png) | ![Admin dashboard screenshot](docs/screenshots/admin-dashboard.png) |
 
-The images above are **original screenshots embedded in the submitted June 2025 assignment**, not fresh runtime test results. Some displayed sample prices and product records are historical demonstration data.
+The published screenshots are **original screenshots embedded in the submitted June 2025 assignment**, not fresh runtime test results. Some displayed sample prices and product records are historical demonstration data.
 
 ## System design diagrams
 
@@ -46,15 +46,15 @@ The images above are **original screenshots embedded in the submitted June 2025 
 
 ### Use-case model
 
-![Use-case diagram from coursework](docs/diagrams/use-case-diagram.jpg)
+Use-case diagram from coursework (upload pending)
 
 ### Data flow
 
-![Level 1 DFD](docs/diagrams/data-flow-diagram.png)
+Level 1 DFD (upload pending)
 
 ### Order-placement process
 
-![Original order-flow chart](docs/diagrams/order-placement-flowchart.jpg)
+Original order-flow chart (upload pending)
 
 For image provenance and the distinction between design requirements and implemented functionality, see [report figure notes](docs/notes/report-figures.md).
 
@@ -104,7 +104,7 @@ SMS delivery notifications and proximity-based driver matching appear in the des
 
 **Module:** Unit 35 — System Analysis & Design (Pearson BTEC HND in Computing), 2025.
 
-**Evidence source:** Author's own submitted coursework report and archived source ZIP. The screenshots and diagrams above are reproduced from that report; only project-owned report visuals were selected for documentation. The complete assignment report, with student and assessor information, is intentionally **not** included in this public repository.
+**Evidence source:** Author's own submitted coursework report and archived source ZIP. Published screenshots and diagrams are reproduced from that report; only project-owned report visuals were selected for documentation. The complete assignment report, with student and assessor information, is intentionally **not** included in this public repository.
 
 ---
 
