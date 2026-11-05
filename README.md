@@ -1,63 +1,111 @@
-# Fresh Grocers — Online Grocery Ordering System
+# Fresh Grocers — Web-Based Grocery Ordering System
 
-**Academic project • Unit 35: System Analysis & Design • Pearson BTEC HND in Computing (2025)**
+> **Academic system analysis, design and web implementation** · Pearson BTEC HND in Computing · Unit 35: System Analysis & Design · 2025
 
-An academic web project based on the **Fresh Grocers** grocery-delivery scenario in Sri Lanka. The work combines requirements analysis, feasibility assessment, Agile/Scrum planning, a proposed e-commerce system design and an archived PHP/MySQL prototype.
+![Fresh Grocers homepage](docs/screenshots/homepage.png)
 
-**Developer and academic author:** [Maleesha Dewmina Perera](https://github.com/MaleeshaDewmina)
+Fresh Grocers is a coursework project for a Sri Lankan grocery delivery business scenario. It combines systems analysis and software design artifacts with an archived PHP-based grocery shopping prototype. The intended user journeys include browsing groceries, managing a shopping cart, submitting orders, and managing products through an administrative interface.
 
-> **Status:** Historical coursework prototype. Not deployed or end-to-end verified. The original source archive did not contain the matching MySQL schema or migrations. Do not use the code for real payments, customer data or production deployment without a full review.
+**Maintainer / academic author:** [Maleesha Dewmina Perera](https://github.com/MaleeshaDewmina)
 
-## Scope and functionality
+## Project highlights
 
-- Grocery browsing, product listings and product-detail pages
-- Shopping-cart and checkout interfaces
-- Customer registration, login and account pages
-- Administrator dashboard and product-management pages
-- Academic system analysis: feasibility, requirements, user roles, Agile versus traditional methodologies
-- Design documentation: entity-relationship diagram, use-case diagram, data-flow diagram and order-placement flowchart
+| Area | Scope and evidence |
+|---|---|
+| Customer experience | Home page, product listing and product details shown in the original report |
+| Shopping flow | Cart and checkout PHP pages are present in the supplied source |
+| Admin experience | Dashboard and product-management files are present; an original dashboard screenshot is documented |
+| Data model | Conceptual ER diagram from the coursework report |
+| Process modeling | Use-case, Level 1 data-flow diagram, and order-placement flowchart |
+| Analysis | Agile vs. traditional methods, feasibility analysis and requirements in the original coursework |
 
-**Implementation note:** The features above are supported by coursework screenshots, source-file presence and design documents, but have not all been functionally tested. Proposed features such as SMS delivery notifications, proximity-based driver matching and customer ratings must not be treated as verified implementations.
+**Project status:** Historical academic prototype. The code has not been deployed or end-to-end tested during this portfolio preparation. The provided ZIP does **not** contain the MySQL database export / migrations, and some legacy module references and business logic still require refactoring. It is **not** ready for public production hosting or real payments.
 
-## Technologies
+## Tech stack
 
-**PHP, MySQL (mysqli), HTML, CSS, JavaScript**, with local PHP/MySQL development tools.
+- PHP (server-side rendering and handlers), HTML5, CSS3, JavaScript
+- MySQL / `mysqli`
+- Local development with PHP + MySQL (e.g., XAMPP)
+- VS Code and design diagrams documented in the assignment report
 
-## Source and documentation
+## Screenshots from the submitted assignment
 
-The original implementation is a legacy coursework project. The intended repository layout is:
+| Home page | Product listing |
+|---|---|
+| ![Homepage screenshot](docs/screenshots/homepage.png) | ![Product listing screenshot](docs/screenshots/product-listing.png) |
+| Product details | Admin dashboard |
+| ![Product detail screenshot](docs/screenshots/product-detail.png) | ![Admin dashboard screenshot](docs/screenshots/admin-dashboard.png) |
+
+The images above are **original screenshots embedded in the submitted June 2025 assignment**, not fresh runtime test results. Some displayed sample prices and product records are historical demonstration data.
+
+## System design diagrams
+
+### Entity-Relationship Diagram
+
+![Original academic ER diagram](docs/diagrams/entity-relationship-diagram.png)
+
+### Use-case model
+
+![Use-case diagram from coursework](docs/diagrams/use-case-diagram.jpg)
+
+### Data flow
+
+![Level 1 DFD](docs/diagrams/data-flow-diagram.png)
+
+### Order-placement process
+
+![Original order-flow chart](docs/diagrams/order-placement-flowchart.jpg)
+
+For image provenance and the distinction between design requirements and implemented functionality, see [report figure notes](docs/notes/report-figures.md).
+
+## Project layout
 
 ```text
-web-app/                  PHP pages, admin/, css/, js/, images/, includes/
-docs/screenshots/         Screenshots extracted from the 2025 assignment
-docs/diagrams/            ERD, use case, DFD and order flowchart
-docs/notes/               Source limitations and provenance notes
-README.md
-.gitignore
+web-app/                 PHP prototype and app assets
+  admin/                 Admin-side PHP handlers and screens
+  css/, js/, images/     Styles, scripts, and product image assets
+  includes/              Shared page fragments and MySQL connection
+  index.php              PHP application landing page
+docs/
+  screenshots/           Screenshots from original 2025 assignment
+  diagrams/              ERD, use case, DFD, and order flow
+  notes/                 Figure provenance and code audit
+README.md                Documentation
+.gitignore               Local files excluded from Git
 ```
 
-The uploaded README is a starting point; application source and graphics should be uploaded separately after review. Do not confuse missing files with confirmed features.
+## Running it locally — development reference
 
-## Local development
+1. Install PHP, MySQL, and a local web server (for example, XAMPP).
+2. Copy the `web-app/` directory under your development server document root (for example, `htdocs/fresh-grocers`).
+3. Enable the PHP mysqli extension. Configure the database using `FRESH_DB_HOST`, `FRESH_DB_USER`, `FRESH_DB_PASSWORD` and `FRESH_DB_NAME` (defaults to `fresh_grocers`) via your local environment or server config.
+4. **Restore the project's original MySQL schema** from your own backup if available. No matching database dump or SQL migration was present in the uploaded ZIP. The database tables and expected columns must be checked against the PHP code before the site can be used.
+5. Open `http://localhost/fresh-grocers/index.php` after configuring the server and database.
 
-1. Install PHP, MySQL and a local web server (for example, XAMPP).
-2. Place the PHP project folder in the server document root.
-3. Configure the local database connection using environment variables such as `FRESH_DB_HOST`, `FRESH_DB_USER`, `FRESH_DB_PASSWORD` and `FRESH_DB_NAME` when using the cleaned configuration.
-4. Restore a **matching, sanitized** MySQL database schema from an original backup if available.
-5. Open the local application through `http://localhost/...` and test each workflow.
+This is a **reference setup**, not a verified installation procedure. Some pages may fail until the correct database schema is restored and legacy source inconsistencies are resolved.
 
-The provided source archive has legacy references to a different clothing-store project and may require changes before the application runs correctly. The database is not supplied, so these steps are **guidance rather than a verified runbook**.
+**Never upload a real `.env` file, database dump containing personal records, or live credentials.** The unprotected sample admin-account seeder, password-debugging endpoint, and database test endpoint were excluded from this portfolio archive.
 
-## Security and source hygiene
+## Known limitations and engineering opportunities
 
-The archived source contains development-only scripts including an administrator-account seeder with a hardcoded demo password. Do **not** upload those scripts or any real credentials, database exports with personal data, .env files or private student information.
+- The original source carried some leftover clothing-store (`Velvet Vogue`) page labels. Visible title strings were normalised to *Fresh Grocers* for consistency; business logic and some clothing-related filtering remain in the archived source.
+- The source references multiple relational tables, but the supplied ZIP did not include a database schema or its data. The ER diagram illustrates the **design** and is not a verified mapping to every table used by the code.
+- The checkout offers payment choices but no verified payment-provider integration. **Do not process live card payments** with this code.
+- Some scripts depend on sessions, server-side validation and error handling that require security review. The checkout currently reads a posted total, so totals should be recomputed on the server before any real use.
+- Third-party imagery, icon fonts and design assets may have separate licences. Review permissions and attribution before commercial redistribution.
 
-The original checkout does not have verified payment-provider integration and needs stronger server-side validation before any practical use.
+SMS delivery notifications and proximity-based driver matching appear in the design. Their implementation has not been verified.
 
-## Project origin
+## Academic attribution
 
-This repository represents **“Web-based System for Fresh Grocers”**, an individual System Analysis & Design assignment submitted in June 2025.
+**Project:** Web-Based System for “Fresh Grocers”
 
-**Author:** Maleesha Dewmina Perera • [GitHub profile](https://github.com/MaleeshaDewmina)
+**Author:** Maleesha Dewmina Perera
 
-The complete academic report is intentionally not uploaded publicly. Future additions may include selected screenshots and diagrams with provenance notes.
+**Module:** Unit 35 — System Analysis & Design (Pearson BTEC HND in Computing), 2025.
+
+**Evidence source:** Author's own submitted coursework report and archived source ZIP. The screenshots and diagrams above are reproduced from that report; only project-owned report visuals were selected for documentation. The complete assignment report, with student and assessor information, is intentionally **not** included in this public repository.
+
+---
+
+*Portfolio reconstruction note:* This repository preserves a historical learning project and demonstrates the associated systems-analysis methods. Features are not claimed as production-ready or independently verified.

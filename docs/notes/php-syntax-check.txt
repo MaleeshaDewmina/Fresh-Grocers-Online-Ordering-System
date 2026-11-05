@@ -1,0 +1,5 @@
+PHP syntax checks of 39 PHP files
+Non-passing files: 0
+
+
+This is a syntax check only, not runtime or database validation.
